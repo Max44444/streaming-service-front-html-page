@@ -1,9 +1,18 @@
 @import "_variables";
 
 body {
-  font-family: 'Courier New', Courier, monospace
+  font-family: 'Courier New', Courier, monospace;
+  display: flex;
 }
 
 .container {
   padding: $containerPadding;
+}
+
+::-moz-selection {
+  background-color: $mainColor;
+}
+
+::selection {
+  background-color: $mainColor;
 }

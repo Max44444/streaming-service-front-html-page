@@ -1,0 +1,157 @@
+@import "_variables";
+
+.aside {
+  top: $headerHeight;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  width: $sidebarWidth;
+
+  .aside__streamers {
+    flex: 1;
+    background-color: $lightGray;
+    overflow-y: scroll;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    
+    &::-webkit-scrollbar {
+      display: none;
+    }
+    
+    .clearfix {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: 100ms;
+      cursor: pointer;
+
+      &:hover {
+        background-color: $grayColor;
+      }
+      
+      img {
+        width: 35px;
+        border-radius: 50%;
+        box-shadow: 0px 0px 5px 2px rgba(34, 60, 80, 0.2);
+      }
+      
+      .name {
+        margin-left: $containerPadding;
+        flex: 1;  
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+        font-size: 1.2rem;
+      }
+
+      .status {
+        display: none;
+        margin-left: 5px;
+        margin-right: 5px;
+        color: red;
+        background-color: red;
+        width: 0.6rem;
+        height: 0.6rem;
+        border-radius: 50%;
+        font-size: 0.6rem;
+        box-shadow: 0 0 0 0 rgba(255, 0, 0, 1);
+        transform: scale(1);
+        animation: pulse 2s infinite;
+      }
+
+      .online {
+        display: block;
+      }
+
+      .subscribers {
+        font-size: 1.2rem;
+      }
+
+    }
+
+  }
+
+  .aside__info {
+    margin-top: 2px;
+    background-color: $lightGray;
+    height: 160px;
+
+    .links {
+      display: flex;
+      flex-direction: column;
+      background-color: $grayColor;
+      height: 100%;
+      width: 100%;
+      padding: 20px;
+      align-items: center;
+      justify-content: space-around;
+
+      h3 {
+        text-align: center;
+        font-size: 1.25rem;
+        font-weight: 500;
+        margin-bottom: 15px;
+      }
+
+      .social-media {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+
+        i {
+          color: black;
+          font-size: 2rem;
+        }
+
+        .telegram:hover {
+          color: #0088cc;
+        }
+
+        .instagram:hover {
+          color: #C13584;
+        }
+
+        .youtube:hover {
+          color: #bb0000;
+        }
+      }
+    }
+  }
+}
+
+@keyframes pulse {
+	0% {
+		transform: scale(0.95);
+		box-shadow: 0 0 0 0 rgba(255, 0, 0, 0.7);
+	}
+
+	70% {
+		transform: scale(1);
+		box-shadow: 0 0 0 3px rgba(255, 0, 0, 0);
+	}
+
+	100% {
+		transform: scale(0.95);
+		box-shadow: 0 0 0 0 rgba(255, 0, 0, 0);
+	}
+}
+
+@media screen and (max-width: 1200px) {
+  .aside {
+    width: auto;
+
+    .aside__info {
+      display: none;
+    }
+
+    .aside__streamers {
+      .clearfix {
+        .name, .status, .subscribers {
+          display: none;
+        }
+      }
+    }
+  }
+}
