@@ -1,0 +1,166 @@
+@import "_variables";
+
+$contentHeight: $headerHeight - 2 * $containerPadding;
+
+.header {
+  position: fixed;
+  width: 100vw;
+  height: $headerHeight;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 1;
+  background-color: $bgColor;
+  box-shadow: 0px 5px 10px -5px rgba(34, 60, 80, 0.6);
+
+  .container {
+    height: 100%;
+    display: inline-block;
+  }
+
+  .header__logo {
+    font-size: $contentHeight;
+    color: $mainColor;
+
+    i, h1 {
+      display: inline;
+    }
+  }
+
+  .header__search {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60vw;
+    max-width: 600px;
+
+    input {
+      width: 100%;
+      box-shadow: 0px 0px 10px -4px rgba(34, 60, 80, 0.2);
+      padding: 5px;
+      height: $contentHeight;
+      border-radius: 5px 0 0 5px;
+      color: $grayColor;
+      font-size: 1.2rem;
+      transition: 150ms;
+
+      &:focus {
+        border: 2px solid $grayColor;
+        border-right: none;
+      }
+    }
+
+    .search-btn {
+      width: $contentHeight + 4px;
+      height: $contentHeight;
+      border: 2px solid $lightGray;
+      background: $lightGray;
+      text-align: center;
+      border-radius: 0 5px 5px 0;
+      cursor: pointer;
+      font-size: $contentHeight * 0.5;
+      transition: 150ms;
+
+      &:hover {
+        box-shadow: 0px 0px 10px -3px rgba(34, 60, 80, 0.2) inset;
+      }
+    }
+
+    .microphone-btn {
+      margin-left: $containerPadding;
+      font-size: $contentHeight * 0.65;
+      color: $grayColor;
+      background-color: $bgColor;
+      transition: 150ms;
+      
+      &:hover {
+        color: $darkGrayColor;
+      }
+    }
+  }
+
+  .header__menu {
+    width: $sidebarWidth;
+    display: flex;
+    justify-content: flex-end;
+
+    button {
+      height: $contentHeight;
+      width: $contentHeight;
+    }
+
+    .notifications {
+      color: $grayColor;
+      background-color: $bgColor;
+      font-size: $contentHeight * 0.65;
+      transition: 150ms;
+
+      &:hover {
+        color: $darkGrayColor;
+      }
+    }
+
+    .menu {
+      margin-left: $containerPadding;
+      border-radius: 50%;
+      background-color: $mainColor;
+      transition: 150ms;
+
+      &:hover {
+        background-color: $grayColor;
+      }
+
+      .dropdown-content {
+        display: none;
+        position: absolute;
+        right: $containerPadding;
+        top: $headerHeight - $containerPadding;
+        width: 180px;
+        background-color: $bgColor;
+        box-shadow: 0px 0px 5px 2px rgba(34, 60, 80, 0.2);
+        border-radius: 5px;
+        overflow: hidden;
+        font-size: 1.2rem;
+        z-index: 1;
+
+        .dropdown-item {
+          padding: $containerPadding;
+          border: 1px solid $lightGray;
+          border-left: 0;
+          border-right: 0;
+          color: $darkGrayColor;
+
+          h6 {
+            display: inline;
+          }
+
+          &:hover {
+            background-color: $lightGray;
+          }
+        }
+
+        .log-out {
+          color: red;
+        }
+      }
+
+      &:hover .dropdown-content {
+        display: block;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .header {
+    .header__logo h1 {
+      display: none;
+    }
+
+    .header__menu {
+      width: auto;
+    }
+  }
+
+
+}

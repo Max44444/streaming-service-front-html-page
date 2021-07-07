@@ -1,0 +1,9 @@
+@import "_variables";
+
+body {
+  font-family: 'Courier New', Courier, monospace
+}
+
+.container {
+  padding: $containerPadding;
+}

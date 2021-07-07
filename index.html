@@ -5,67 +5,74 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="css/index.css">
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
   <title>Bulka TV</title>
 </head>
 
 <body>
   <header class="header">
-    <div class="container">
-      <div class="header__logo">
-        <a class="logo">
-          <img src="#" alt="Logo">
-        </a>
-        <h1>Bulka TV</h1>
-      </div>
+    <div class="container header__logo">
+      <a class="logo">
+        <i class="fas fa-cat"></i>
+      </a>
+      <h1>Bulka TV</h1>
+    </div>
 
-      <div class="header__search">
-        <input type="text" placeholder="Search">
-        <button type="submit">
-          search
-        </button>
-        <button>
-          voice
-        </button>
-      </div>
+    <div class="container header__search">
+      <input type="text" placeholder="Search">
+      <button class="search-btn">
+        <i class="fas fa-search"></i>
+      </button>
+      <button class="microphone-btn">
+        <i class="fas fa-microphone"></i>
+      </button>
+    </div>
 
-      <div class="header__menu">
-        <button class="notifications">Notifications</button>
-        <button class="menu">Menu</button>
-      </div>
+    <div class="container header__menu">
+      <button class="notifications">
+        <i class="fas fa-bell"></i>
+      </button>
+      <button class="menu">
+        <i class="fas fa-paw"></i>
+        <div class="dropdown-content">
+          <div class="dropdown-item">
+            <span><i class="fas fa-paw"></i></span>
+            <h6>Profile</h6>
+          </div>
+          <div class="dropdown-item">
+            <span><i class="fas fa-cog"></i></span>
+            <h6>Settings</h6>
+          </div>
+          <div class="dropdown-item log-out">
+            <span><i class="fas fa-sign-out-alt"></i></span>
+            <h6>Log Out</h6>
+          </div>
+        </div>
+      </button>
     </div>
   </header>
 
   <aside class="aside">
-    <div class="container">
-      <div class="aside__streamers">
-        Streamers here
-      </div>
-      <div class="aside__info">
-        info here
-      </div>
+    <div class="container aside__streamers">
+      Streamers here
+    </div>
+    <div class="container aside__info">
+      info here
     </div>
   </aside>
 
   <menu class="menu">
-    <div class="menu__categories">
-      <div class="container">
+    <div class="container menu__categories">
         Categories here
-      </div>
     </div>
-    <div class="menu__slider">
-      <div class="container">
+    <div class="container menu__slider">
         Slider here
-      </div>
     </div>
-    <div class="menu__videos">
-      <div class="container">
+    <div class="container menu__videos">
         Videos here
-      </div>
     </div>
-    <footer class="footer">
-      <div class="container">
+    <footer class="container footer">
         footer here
-      </div>
     </footer>
   </menu>
 </body>

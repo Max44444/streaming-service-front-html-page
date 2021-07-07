@@ -35,8 +35,8 @@ aside {
 
 html,
 body {
-  height: 100%;
-  width: 100%;
+  height: 100vh;
+  width: 100vw;
   font-size: 100%;
   line-height: 1;
   font-size: 14px;
@@ -80,4 +80,195 @@ ul li {
 img {
   display: block;
   max-width: 100%;
+}
+
+body {
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.container {
+  padding: 14px;
+}
+
+.header {
+  position: fixed;
+  width: 100vw;
+  height: 66px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  z-index: 1;
+  background-color: #fffde7;
+  -webkit-box-shadow: 0px 5px 10px -5px rgba(34, 60, 80, 0.6);
+          box-shadow: 0px 5px 10px -5px rgba(34, 60, 80, 0.6);
+}
+
+.header .container {
+  height: 100%;
+  display: inline-block;
+}
+
+.header .header__logo {
+  font-size: 38px;
+  color: #ffb74d;
+}
+
+.header .header__logo i, .header .header__logo h1 {
+  display: inline;
+}
+
+.header .header__search {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 60vw;
+  max-width: 600px;
+}
+
+.header .header__search input {
+  width: 100%;
+  -webkit-box-shadow: 0px 0px 10px -4px rgba(34, 60, 80, 0.2);
+          box-shadow: 0px 0px 10px -4px rgba(34, 60, 80, 0.2);
+  padding: 5px;
+  height: 38px;
+  border-radius: 5px 0 0 5px;
+  color: #bdbdbd;
+  font-size: 1.2rem;
+  -webkit-transition: 150ms;
+  transition: 150ms;
+}
+
+.header .header__search input:focus {
+  border: 2px solid #bdbdbd;
+  border-right: none;
+}
+
+.header .header__search .search-btn {
+  width: 42px;
+  height: 38px;
+  border: 2px solid #e0e0e0;
+  background: #e0e0e0;
+  text-align: center;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+  font-size: 19px;
+  -webkit-transition: 150ms;
+  transition: 150ms;
+}
+
+.header .header__search .search-btn:hover {
+  -webkit-box-shadow: 0px 0px 10px -3px rgba(34, 60, 80, 0.2) inset;
+          box-shadow: 0px 0px 10px -3px rgba(34, 60, 80, 0.2) inset;
+}
+
+.header .header__search .microphone-btn {
+  margin-left: 14px;
+  font-size: 24.7px;
+  color: #bdbdbd;
+  background-color: #fffde7;
+  -webkit-transition: 150ms;
+  transition: 150ms;
+}
+
+.header .header__search .microphone-btn:hover {
+  color: #757575;
+}
+
+.header .header__menu {
+  width: 240px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+.header .header__menu button {
+  height: 38px;
+  width: 38px;
+}
+
+.header .header__menu .notifications {
+  color: #bdbdbd;
+  background-color: #fffde7;
+  font-size: 24.7px;
+  -webkit-transition: 150ms;
+  transition: 150ms;
+}
+
+.header .header__menu .notifications:hover {
+  color: #757575;
+}
+
+.header .header__menu .menu {
+  margin-left: 14px;
+  border-radius: 50%;
+  background-color: #ffb74d;
+  -webkit-transition: 150ms;
+  transition: 150ms;
+}
+
+.header .header__menu .menu:hover {
+  background-color: #bdbdbd;
+}
+
+.header .header__menu .menu .dropdown-content {
+  display: none;
+  position: absolute;
+  right: 14px;
+  top: 52px;
+  width: 180px;
+  background-color: #fffde7;
+  -webkit-box-shadow: 0px 0px 5px 2px rgba(34, 60, 80, 0.2);
+          box-shadow: 0px 0px 5px 2px rgba(34, 60, 80, 0.2);
+  border-radius: 5px;
+  overflow: hidden;
+  font-size: 1.2rem;
+  z-index: 1;
+}
+
+.header .header__menu .menu .dropdown-content .dropdown-item {
+  padding: 14px;
+  border: 1px solid #e0e0e0;
+  border-left: 0;
+  border-right: 0;
+  color: #757575;
+}
+
+.header .header__menu .menu .dropdown-content .dropdown-item h6 {
+  display: inline;
+}
+
+.header .header__menu .menu .dropdown-content .dropdown-item:hover {
+  background-color: #e0e0e0;
+}
+
+.header .header__menu .menu .dropdown-content .log-out {
+  color: red;
+}
+
+.header .header__menu .menu:hover .dropdown-content {
+  display: block;
+}
+
+@media screen and (max-width: 1200px) {
+  .header .header__logo h1 {
+    display: none;
+  }
+  .header .header__menu {
+    width: auto;
+  }
 }
