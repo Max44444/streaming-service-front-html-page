@@ -84,25 +84,26 @@ $contentHeight: $headerHeight - 2 * $containerPadding;
     width: $sidebarWidth;
     display: flex;
     justify-content: flex-end;
-
-    button {
-      height: $contentHeight;
-      width: $contentHeight;
-    }
-
+    
     .notifications {
       color: $white;
       background-color: $orange;
       font-size: $contentHeight * 0.65;
       transition: 150ms;
     }
-
+    
     .menu {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: $contentHeight;
+      width: $contentHeight;
       margin-left: $containerPadding;
       border-radius: 50%;
       background-color: $braun;
       color: $white;
       transition: 150ms;
+      cursor: pointer;
 
       &:hover {
         background-color: $gray;

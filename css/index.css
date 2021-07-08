@@ -211,11 +211,6 @@ body {
           justify-content: flex-end;
 }
 
-.header .header__menu button {
-  height: 38px;
-  width: 38px;
-}
-
 .header .header__menu .notifications {
   color: #fffde7;
   background-color: #ffa500;
@@ -225,12 +220,24 @@ body {
 }
 
 .header .header__menu .menu {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 38px;
+  width: 38px;
   margin-left: 14px;
   border-radius: 50%;
   background-color: #bd7a00;
   color: #fffde7;
   -webkit-transition: 150ms;
   transition: 150ms;
+  cursor: pointer;
 }
 
 .header .header__menu .menu:hover {
