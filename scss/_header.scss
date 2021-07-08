@@ -9,8 +9,8 @@ $contentHeight: $headerHeight - 2 * $containerPadding;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  z-index: 1;
-  background-color: $bgColor;
+  z-index: 4;
+  background-color: $orange;
   box-shadow: 0px 5px 10px -5px rgba(34, 60, 80, 0.6);
 
   .container {
@@ -20,9 +20,10 @@ $contentHeight: $headerHeight - 2 * $containerPadding;
 
   .header__logo {
     font-size: $contentHeight;
-    color: $mainColor;
-
+    cursor: pointer;
+    
     i, h1 {
+      color: $white;
       display: inline;
     }
   }
@@ -39,24 +40,27 @@ $contentHeight: $headerHeight - 2 * $containerPadding;
       box-shadow: 0px 0px 10px -4px rgba(34, 60, 80, 0.2);
       padding: 5px;
       height: $contentHeight;
-      border-radius: 5px 0 0 5px;
-      color: $grayColor;
+      border-radius: 10px 0 0 10px;
+      color: $braun;
+      background-color: $white;
       font-size: 1.2rem;
-      transition: 150ms;
+      border: 1px solid $braun;
+      border-right: none;
 
       &:focus {
-        border: 2px solid $grayColor;
-        border-right: none;
+        box-shadow: 0px 0px 3px 2px rgba(0, 0, 0, 0.2) inset;
       }
     }
 
     .search-btn {
       width: $contentHeight + 4px;
       height: $contentHeight;
-      border: 2px solid $lightGray;
-      background: $lightGray;
+      border: 1px solid $braun;
+      border-left: none;
+      background-color: $braun;
+      color: $white;
       text-align: center;
-      border-radius: 0 5px 5px 0;
+      border-radius: 0 10px 10px 0;
       cursor: pointer;
       font-size: $contentHeight * 0.5;
       transition: 150ms;
@@ -69,13 +73,10 @@ $contentHeight: $headerHeight - 2 * $containerPadding;
     .microphone-btn {
       margin-left: $containerPadding;
       font-size: $contentHeight * 0.65;
-      color: $grayColor;
-      background-color: $bgColor;
+      color: $white;
+      background-color: $orange;
       transition: 150ms;
-      
-      &:hover {
-        color: $darkGrayColor;
-      }
+    
     }
   }
 
@@ -90,62 +91,58 @@ $contentHeight: $headerHeight - 2 * $containerPadding;
     }
 
     .notifications {
-      color: $grayColor;
-      background-color: $bgColor;
+      color: $white;
+      background-color: $orange;
       font-size: $contentHeight * 0.65;
       transition: 150ms;
-
-      &:hover {
-        color: $darkGrayColor;
-      }
     }
 
     .menu {
       margin-left: $containerPadding;
       border-radius: 50%;
-      background-color: $mainColor;
+      background-color: $braun;
+      color: $white;
       transition: 150ms;
 
       &:hover {
-        background-color: $grayColor;
+        background-color: $gray;
       }
 
       .dropdown-content {
-        display: none;
-        position: absolute;
-        right: $containerPadding;
+        position: fixed;
+        right: -200px;
         top: $headerHeight - $containerPadding;
         width: 180px;
-        background-color: $bgColor;
+        background-color: $gray;
         box-shadow: 0px 0px 5px 2px rgba(34, 60, 80, 0.2);
-        border-radius: 5px;
+        border: 1px solid $orange;
+        border-radius: 15px;
         overflow: hidden;
         font-size: 1.2rem;
-        z-index: 1;
+        z-index: inherit;
+        transition: 400ms;
 
         .dropdown-item {
           padding: $containerPadding;
-          border: 1px solid $lightGray;
-          border-left: 0;
-          border-right: 0;
-          color: $darkGrayColor;
+          border-top: 1px solid $orange;
+          color: $white;
 
           h6 {
             display: inline;
           }
 
           &:hover {
-            background-color: $lightGray;
+            background-color: $darkGray;
           }
         }
 
         .log-out {
-          color: red;
+          color: $orange;
         }
       }
 
       &:hover .dropdown-content {
-        display: block;
+        right: $containerPadding;
       }
     }
   }

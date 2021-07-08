@@ -1,18 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 @import "_variables";
 
 body {
-  font-family: 'Courier New', Courier, monospace;
-  display: flex;
+  font-family: 'Roboto', sans-serif;
 }
 
 .container {
   padding: $containerPadding;
 }
 
+.section-title {
+  font-size: 38px;
+  font-weight: 550;
+  color: $orange;
+}
+
 ::-moz-selection {
-  background-color: $mainColor;
+  background-color: $braun;
 }
 
 ::selection {
-  background-color: $mainColor;
+  background-color: $braun;
 }

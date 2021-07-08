@@ -1,5 +1,95 @@
 @import "_variables";
 
 .main {
-  flex: 1;
+  position: absolute;
+  top: $headerHeight;
+  bottom: 0;
+  left: $sidebarWidth;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  background-color: $white;
+  overflow-x: hidden;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+
+  .menu__categories {
+    min-height: $headerHeight;
+    border: 1px solid $orange;
+    background-color: $gray;
+
+    .categories {
+      display: flex;
+      overflow-x: scroll;
+      overflow-y: hidden;
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+  
+      &::-webkit-scrollbar {
+        display: none;
+      }
+      
+      .category {
+        margin-right: 1rem;
+        word-wrap: none;
+        white-space: nowrap;
+        border-radius: 30px;
+        background-color: $darkGray;
+        color: $white;
+        padding: 0.65rem 2rem;
+        font-size: 1.2rem;
+        cursor: pointer;
+        transition: background-color 150ms;
+
+        &.active {
+          background-color: $orange;
+        }
+        
+        &:hover {
+          background-color: $orange;
+        }
+  
+        &:last-child {
+          margin-right: 0;
+        }
+  
+      }
+    }
+  }
+
+  .menu__videos {
+    flex: 1 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+    grid-template-rows: repeat(auto-fit, minmax(200px, 260px));
+    gap: 3rem 1rem;
+    margin-top: 2rem;
+  }
+
+  .footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5rem;
+    background-color: $gray;
+    color: $white;
+    border: 1px solid $orange;
+    height: $headerHeight;
+    font-size: 1.3rem;
+
+    i {
+      margin-left: 0.8rem;
+    }
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .main {
+    left: 63px;
+  }
 }

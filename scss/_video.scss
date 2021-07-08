@@ -1,0 +1,124 @@
+@import "_variables";
+
+.video {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0px 0px 11px -1px rgba(34, 60, 80, 0.32);
+  height: 100%;
+
+  .thumbnail {
+    position: relative;
+    display: flex;
+    height: calc(100% - 50px);
+
+    &:hover {
+      cursor: pointer;
+
+      .preview {
+        filter: brightness(65%);
+        transition: 300ms linear;
+      }
+  
+      .play-btn {
+        opacity: 1;
+        transition: 300ms linear;
+      }
+    }
+
+    &::before {
+      content: attr(data-details);
+      position: absolute;
+      bottom: 10px;
+      right: 10px;
+      background-color: black;
+      color: $white;
+      opacity: 0.7;
+      padding: 4px;
+      font-size: 0.9rem;
+      border-radius: 0.25rem;
+      z-index: 1;
+    }
+
+    &[data-live]::after {
+      content: "LIVE";
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      background-color: red;
+      color: $white;
+      padding: 4px;
+      font-size: 0.9rem;
+      border-radius: 0.25rem;
+      z-index: 1;
+    }
+
+    .preview {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      min-width: 250px;
+      min-height: 150px;
+      background-color: $white;
+    }
+
+    .play-btn {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      padding: 6px;
+      border-radius: 50%;
+      font-size: 2.1rem;
+      background-color: rgba(0, 0, 0, 0.6);
+      color: $white;
+      opacity: 0;
+    }
+
+  }
+
+  .video-bottom-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px;
+    width: 100%;
+
+    .avatar {
+      height: 32px;
+      width: 32px;
+      border-radius: 100%;
+      cursor: pointer;
+      box-shadow: 0px 0px 3px 2px rgba(34, 60, 80, 0.2);
+    }
+
+    .text-info {
+      flex: 1 0;
+      margin-left: 8px;
+      overflow: hidden;
+      
+      .title {
+        font-size: 1.25rem;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+      }
+
+      .author-name {
+        margin-top: 2px;
+        font-size: 0.9rem;
+        color: $gray;
+        cursor: pointer;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+      }
+    }
+
+    .options {
+      margin-left: 8px;
+      font-size: 1.1rem;
+      cursor: pointer;
+    }
+  }
+}

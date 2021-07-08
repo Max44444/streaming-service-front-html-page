@@ -1,0 +1,215 @@
+@import "_variables";
+
+.menu__slider {
+  position: relative;
+  margin: 20px 0;
+  width: 100%;
+  min-height: 300px;
+  overflow: hidden;
+
+  .row {
+    overflow-x: scroll;
+    overflow-y: hidden;
+    width: 100%;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    .row__inner {
+      transition: 450ms transform;
+      font-size: 0;
+      margin: 25px 0;
+      white-space: nowrap;
+      padding-bottom: 10px;
+
+      &:hover {
+        transform: translate3d(-20px, 0, 0);
+      }
+      
+      &:hover .tile {
+        opacity: 0.3;
+
+        &:hover {
+          transform: scale(1.2) translateX(-50px);
+          opacity: 1;
+          z-index: 2;
+
+          &:first-child {
+            transform: scale(1.2) translateX(20px);
+          }
+
+          &:last-child {
+            transform: scale(1.2) translateX(-180px);
+          }
+        }
+      }
+      
+      .tile {
+        position: relative;
+        display: inline-block;
+        width: $videoWidth;
+        height: 200px;
+        margin-right: 10px;
+        font-size: 20px;
+        cursor: pointer;
+        transition: 450ms all;
+        transform-origin: center left;
+        border-radius: 20px;
+        box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.2);
+
+        &:hover ~ .tile {
+          transform: translate3d(40px, 0, 0);
+        }
+
+        .thumbnail {
+          position: relative;
+          display: flex;
+          z-index: 1;
+
+          .preview {
+            width: $videoWidth;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+          }
+        
+          &::before {
+            content: attr(data-details);
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            background-color: black;
+            color: $white;
+            opacity: 0.7;
+            padding: 4px;
+            font-size: 0.9rem;
+            border-radius: 0.25rem;
+            z-index: 1;
+          }
+      
+          &[data-live]::after {
+            content: "LIVE";
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background-color: red;
+            color: $white;
+            padding: 4px;
+            font-size: 0.9rem;
+            border-radius: 0.25rem;
+            z-index: 1;
+          }
+        
+        
+          .play-btn {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            padding: 6px;
+            border-radius: 50%;
+            font-size: 2.1rem;
+            background-color: rgba(0, 0, 0, 0.6);
+            color: $white;
+            opacity: 0;
+          }
+        
+          &:hover {
+            cursor: pointer;
+        
+            .preview {
+              filter: brightness(70%);
+              transition: 300ms linear;
+            }
+        
+            .play-btn {
+              opacity: 1;
+              transition: 300ms linear;
+            }
+        
+          }
+        }
+
+        .tile__img {
+          width: 250px;
+          height: 140.625px;
+          object-fit: cover;
+        }
+
+        .tile:hover & {
+          opacity: 1;
+        }
+
+        .info {
+          position: absolute;
+          left: $videoWidth - 140px;
+          top: 0;
+          bottom: 0;
+          width: 140px;
+          padding: 10px 10px 10px 30px;
+          background-color: $darkGray;
+          color: $white;
+          z-index: 0;
+          border: 1px solid $orange;
+          border-radius: 0 20px 20px 0;
+          box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.2);
+          transition: 450ms all;
+          cursor: auto;
+
+          .short-info {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            .avatar {
+              height: 32px;
+              width: 32px;
+              border-radius: 100%;
+              cursor: pointer;
+              box-shadow: 0px 0px 3px 2px rgba(34, 60, 80, 0.2);
+            }
+        
+            .text-info {
+              flex: 1 0;
+              margin-left: 8px;
+              overflow: hidden;
+              
+              .title {
+                font-size: 1.25rem;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+                overflow: hidden;
+              }
+        
+              .author-name {
+                font-size: 0.9rem;
+                color: $orange;
+                cursor: pointer;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+                overflow: hidden;
+              }
+            }
+          }
+
+          .description {
+            margin-top: 1rem;
+            height: auto;
+            font-size: 0.9rem;
+            color: $white;
+            white-space: normal;
+            overflow: hidden;
+          }
+        }
+
+        &:hover .info {
+          transition: 450ms all;
+          transform: translateX(120px);
+        }
+      }
+    }
+  }
+}

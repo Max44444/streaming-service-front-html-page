@@ -1,15 +1,17 @@
 @import "_variables";
 
 .aside {
+  position: fixed;
   top: $headerHeight;
   bottom: 0;
   display: flex;
   flex-direction: column;
   width: $sidebarWidth;
+  border: 1px solid $orange;
 
   .aside__streamers {
     flex: 1;
-    background-color: $lightGray;
+    background-color: $gray;
     overflow-y: scroll;
     -ms-overflow-style: none;
     scrollbar-width: none;
@@ -25,9 +27,10 @@
       align-items: center;
       transition: 100ms;
       cursor: pointer;
+      color: $white;
 
       &:hover {
-        background-color: $grayColor;
+        background-color: $darkGray;
       }
       
       img {
@@ -49,13 +52,13 @@
         display: none;
         margin-left: 5px;
         margin-right: 5px;
-        color: red;
-        background-color: red;
+        color: lawngreen;
+        background-color: lawngreen;
         width: 0.6rem;
         height: 0.6rem;
         border-radius: 50%;
         font-size: 0.6rem;
-        box-shadow: 0 0 0 0 rgba(255, 0, 0, 1);
+        box-shadow: 0 0 0 0 rgba(0, 255, 0, 1);
         transform: scale(1);
         animation: pulse 2s infinite;
       }
@@ -73,14 +76,15 @@
   }
 
   .aside__info {
-    margin-top: 2px;
-    background-color: $lightGray;
+    border-top: 1px solid $orange;
+    background-color: $darkGray;
     height: 160px;
+    color: $white;
 
     .links {
       display: flex;
       flex-direction: column;
-      background-color: $grayColor;
+      background-color: $gray;
       height: 100%;
       width: 100%;
       padding: 20px;
@@ -101,8 +105,8 @@
         justify-content: space-around;
 
         i {
-          color: black;
           font-size: 2rem;
+          color: $white;
         }
 
         .telegram:hover {
@@ -110,11 +114,11 @@
         }
 
         .instagram:hover {
-          color: #C13584;
+          color: #E1306C;
         }
 
         .youtube:hover {
-          color: #bb0000;
+          color: #ff0000;
         }
       }
     }
@@ -124,12 +128,12 @@
 @keyframes pulse {
 	0% {
 		transform: scale(0.95);
-		box-shadow: 0 0 0 0 rgba(255, 0, 0, 0.7);
+		box-shadow: 0 0 0 0 rgba(0, 255, 0, 0.7);
 	}
 
 	70% {
 		transform: scale(1);
-		box-shadow: 0 0 0 3px rgba(255, 0, 0, 0);
+		box-shadow: 0 0 0 3px rgba(0, 255, 0, 0);
 	}
 
 	100% {
